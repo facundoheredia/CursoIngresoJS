@@ -5,43 +5,85 @@ C.	ingresar tres precios de productos  y mostrar precio final (más IVA 21%).
 */
 function Sumar () 
 {
-	var primerprecio;
-    var segundoprecio;
-    var tercerprecio;
-    var suma;
-
-    primerprecio = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    segundoprecio = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    tercerprecio = parseFloat(document.getElementById("txtIdPrecioTres").value);
-    suma = primerprecio + segundoprecio + tercerprecio;
-
-    alert("La suma es: $" + suma.toFixed(2));
-}
-function Promedio () 
-{
-    var primerprecio;
-    var segundoprecio;
-    var tercerprecio;
-    var promedio;
-
-    primerprecio = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    segundoprecio = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    tercerprecio = parseFloat(document.getElementById("txtIdPrecioTres").value);
-    promedio = (primerprecio + segundoprecio + tercerprecio) / 3;
-
-    alert("El precio promedio es: $" + promedio.toFixed(2));
-}
-function PrecioFinal () 
-{
+    //Declaro las VARIABLES
 	var primerprecio;
     var segundoprecio;
     var tercerprecio;
     var precioFinal;
 
-    primerprecio = parseFloat(document.getElementById("txtIdPrecioUno").value);
-    segundoprecio = parseFloat(document.getElementById("txtIdPrecioDos").value);
-    tercerprecio = parseFloat(document.getElementById("txtIdPrecioTres").value);
-    precioFinal = (primerprecio + segundoprecio + tercerprecio) * 1.21;
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    primerprecio = document.getElementById("txtIdPrecioUno").value;
+    segundoprecio = document.getElementById("txtIdPrecioDos").value;
+    tercerprecio = document.getElementById("txtIdPrecioTres").value;
 
-    alert("El precio final mas IVA es: $" + precioFinal.toFixed(2));
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    primerprecio = parseFloat(primerprecio);
+    segundoprecio = parseFloat(segundoprecio);
+    tercerprecio = parseFloat(tercerprecio);
+
+    //Hago el calculo de la suma para pasar el precio final
+    precioFinal = primerprecio + segundoprecio + tercerprecio;
+
+    //Redondeo a 2 decimales con TOFIXED
+    precioFinal = precioFinal.toFixed(2);
+
+    //Muestro por ALERT el mensaje " " con el precio final
+    alert("La suma es: $" + precioFinal);
 }
+function Promedio () 
+{
+    //Declaro las VARIABLES
+    var primerprecio;
+    var segundoprecio;
+    var tercerprecio;
+    var promedio;
+
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    primerprecio = document.getElementById("txtIdPrecioUno").value;
+    segundoprecio = document.getElementById("txtIdPrecioDos").value;
+    tercerprecio = document.getElementById("txtIdPrecioTres").value;
+
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    primerprecio = parseFloat(primerprecio);
+    segundoprecio = parseFloat(segundoprecio);
+    tercerprecio = parseFloat(tercerprecio);
+
+    //Hago el calculo del promedio para pasar el precio final
+    promedio = (primerprecio + segundoprecio + tercerprecio) / 3;
+
+    //Redondeo a 2 decimales con TOFIXED
+    promedio = promedio.toFixed(2);
+
+    //Muestro por ALERT el mensaje " " con el precio final
+    alert("El precio promedio es: $" + promedio);
+}
+function PrecioFinal () 
+{
+    //Declaro las VARIABLES y CONSTANTES
+	var primerprecio;
+    var segundoprecio;
+    var tercerprecio;
+    var precioFinal;
+    const IVA = 1.21;
+
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    primerprecio = document.getElementById("txtIdPrecioUno").value;
+    segundoprecio = document.getElementById("txtIdPrecioDos").value;
+    tercerprecio = document.getElementById("txtIdPrecioTres").value;
+
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    primerprecio = parseFloat(primerprecio);
+    segundoprecio = parseFloat(segundoprecio);
+    tercerprecio = parseFloat(tercerprecio);
+
+    //Hago el calculo de la suma para pasar el precio final con IVA
+    precioFinal = (primerprecio + segundoprecio + tercerprecio) * IVA;
+
+    //Redondeo a 2 decimales con TOFIXED
+    precioFinal = precioFinal.toFixed(2);
+
+    //Muestro por ALERT el mensaje " " con el precio final
+    alert("El precio final mas IVA es: $" + precioFinal);
+}
+
+//https://onlinegdb.com/k5RtaCBuY

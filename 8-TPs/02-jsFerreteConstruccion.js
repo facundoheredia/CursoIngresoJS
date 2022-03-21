@@ -6,41 +6,88 @@ C.	Para hacer un contrapiso de 1m x 1m se necesitan 2 bolsas de cemento y 3 de c
 
 function Rectangulo () 
 {
+    //Declaro las VARIABLES y CONSTANTES
     var largo;
     var ancho;
-    var alambre;
+    var perimetro;
+    var metrosDeAlambre;
+    const VUELTAS_DE_ALAMBRE = 3;
 
-    largo = parseFloat(document.getElementById("txtIdLargo").value);
-    ancho = parseFloat(document.getElementById("txtIdAncho").value);
-    alambre = ((largo + ancho) * 2) * 3;
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    largo = document.getElementById("txtIdLargo").value;
+    ancho = document.getElementById("txtIdAncho").value;
 
-    alert("La cantidad de metros a comprar de alambre es de: " + alambre);
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    largo = parseFloat(largo);
+    ancho = parseFloat(ancho);
+
+    //Calculo el perimetro del rectangulo
+    perimetro = (largo + ancho) * 2;
+
+    //Calculo el total de alambre
+    metrosDeAlambre = perimetro * VUELTAS_DE_ALAMBRE;
+
+    //Redondeo a 2 decimales con TOFIXED
+    metrosDeAlambre = metrosDeAlambre.toFixed(2);
+
+    //Muestro por ALERT el mensaje " " con la cantidad de metros a comprar
+    alert("La cantidad a comprar de alambre es de: " + metrosDeAlambre + " metros");
 }
 function Circulo () 
 {
+    //Declaro las VARIABLES y CONSTANTES
 	var radio;
-    var alambre;
-    const PI = 3.14;
+    var perimetro;
+    var metrosDeAlambre;
+    const PI = Math.PI;
+    const VUELTAS_DE_ALAMBRE = 3;  
 
-    radio = parseFloat(document.getElementById("txtIdRadio").value);
-    alambre = (2 * PI * radio) * 3;
-    alambre = alambre.toFixed(2);
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    radio = document.getElementById("txtIdRadio").value;
 
-    alert("La cantidad de metros a comprar de alambre es de: " + alambre);
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    radio = parseFloat(radio);
+
+    //Calculo el perimetro del circulo
+    perimetro = (2 * PI * radio);
+
+    //Calculo el total de alambre
+    metrosDeAlambre = perimetro * VUELTAS_DE_ALAMBRE;
+
+    //Redondeo a 2 decimales con TOFIXED
+    metrosDeAlambre = metrosDeAlambre.toFixed(2);
+
+    //Muestro por ALERT el mensaje " " con la cantidad de metros a comprar
+    alert("La cantidad a comprar de alambre es de: " + metrosDeAlambre + " metros");
 }
 function Materiales () 
 {
+    //Declaro las VARIABLES y CONSTANTES
 	var largo;
     var ancho;
     var area;
     var bolsacemento;
     var bolsacal;
+    const CANTIDAD_BOLSA_CEMENTO = 2;
+    const CANTIDAD_BOLSA_CAL = 3;
 
-    largo = parseFloat(document.getElementById("txtIdLargo").value);
-    ancho = parseFloat(document.getElementById("txtIdAncho").value);
+    //Guardo la informacion de las cajas de texto segun su ID " " y lo guardo en las VARIABLES
+    largo = document.getElementById("txtIdLargo").value;
+    ancho = document.getElementById("txtIdAncho").value;
+
+    //Parseo con PASEFLOAT para que me tome los numeros decimales
+    largo = parseFloat(largo);
+    ancho = parseFloat(ancho);
+
+    //Calculo el area
     area = largo * ancho;
-    bolsacemento = area * 2;
-    bolsacal = area * 3;
 
-    alert("Se deben comprar " + bolsacemento + " bolsas de cemento y " + bolsacal + " boslas de cal");
+    //Calculo cuantas volsas necesito de cal y cemento
+    bolsacemento = area * CANTIDAD_BOLSA_CEMENTO;
+    bolsacal = area * CANTIDAD_BOLSA_CAL;
+
+    //Muestro por ALERT el mensaje " " con la cantidad de bolsas a comprar
+    alert("Se deben comprar " + bolsacemento + " bolsas de cemento y " + bolsacal + " bolsas de cal");
 }
+
+//https://onlinegdb.com/VOol7JAXC

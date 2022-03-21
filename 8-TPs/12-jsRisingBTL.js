@@ -1,4 +1,7 @@
-/*RISING BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
+/*
+RISING BTL. 
+Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada 
+e ingresada por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos. 
 12.   Los datos requeridos son los siguientes:
 A.	Edad, entre 18 y 90 años inclusive.
 B.	Sexo, “M” para masculino y “F” para femenino
@@ -9,11 +12,5 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
  */
 function ComenzarIngreso () 
 {
- 	//definicion de variables
- 	var edadIngresada;
- 	var sexoIngresado;
- 	var estadoCivilIngresado;
-
-
 
 }
